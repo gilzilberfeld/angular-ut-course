@@ -5,7 +5,12 @@ import { Injectable } from '@angular/core';
 })
 export class FactorialService {
 
-  constructor() { }
+  static calculate(theNumber : number) : number {
+		if (theNumber <= 1)
+			return 1;
+		else
+			return FactorialService.calculate(theNumber-1)*theNumber;
+	}
+
 }
 
-// todo: add factorial implemenation and test
