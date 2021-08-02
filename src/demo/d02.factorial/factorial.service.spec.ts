@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { FactorialService } from './factorial.service';
 
-describe('FactorialService', () => {
+describe('Factorial Service', () => {
   let service: FactorialService;
 
   beforeEach(() => {
