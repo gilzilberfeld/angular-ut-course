@@ -3,9 +3,10 @@ import { Mock } from 'protractor/built/driverProviders';
 import { CarService } from './car.service';
 
 import { DriverService } from './driver.service';
-import { MockCar } from './mock-car.service';
+import { MockCar } from './mocks/MockCar';
 
-describe('Driver', () => {
+
+describe('Driver with testbed injected manual mock', () => {
   let driver: DriverService;
   let mockCar : CarService;
 
