@@ -1,4 +1,5 @@
 import { TestBed } from '@angular/core/testing';
+import { Console } from 'console';
 import { ACMode, AirCondition } from '../d04.manual_mocking/aircondition';
 import { CarService } from '../d04.manual_mocking/car.service';
 import { DriverService } from '../d04.manual_mocking/driver.service';
@@ -35,13 +36,19 @@ describe('Driver with spies', () => {
   it('can now check on method calls', ()=>{
     driver.canDrive();
     expect(mockCar.isRunning).toHaveBeenCalled();
+    // OR
+    expect(carSpy.isRunning.calls.argsFor(0)).toEqual([]);
+
   });
 
   it ('can even check the arguments', ()=>{
-
     driver.drive();
     expect(mockCar.setAC).toHaveBeenCalledWith(jasmine.objectContaining({
       mode: ACMode.On
     }));
+    // OR
+    const theArg = carSpy.setAC.calls.argsFor(0)[0];
+    var theMode = theArg['mode'];
+    expect(theMode).toEqual(ACMode.On);
     });
 });
