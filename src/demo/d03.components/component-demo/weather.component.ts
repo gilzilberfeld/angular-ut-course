@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 @Component({
-  selector: 'clicker-comp',
+  selector: 'weather-comp',
   template: `
-    <button (click)="clicked()">Click me!</button>
+    <button (click)="change()">Click me!</button>
     <span>{{message}}</span>`
 })
 
@@ -12,7 +12,7 @@ export class WeatherForcastComponent {
   constructor() {
     
   }
-  clicked() { 
+  change() { 
     this.isSunny = !this.isSunny; 
   }
   get message() { return `The weather is ${this.isSunny ? 'Sunny' : 'Rainy'}`; }

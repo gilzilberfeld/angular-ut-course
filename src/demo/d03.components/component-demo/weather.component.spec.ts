@@ -29,13 +29,13 @@ describe('WeatherComponent', () => {
   });
 
   it('value should be rainy after click', ()=>{
-    component.clicked();
+    component.change();
     expect(component.message).toContain("Rainy");
     expect(htmlElement.querySelector('span').textContent).toContain("Sunny");
   });
 
   it('message span should be rainy after detectChanges', ()=>{
-    component.clicked();
+    component.change();
     fixture.detectChanges();
     expect(htmlElement.querySelector('span').textContent).toContain("Rainy");
   });
