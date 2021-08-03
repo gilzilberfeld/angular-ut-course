@@ -22,11 +22,11 @@ describe('Driver', () => {
     expect(driver.canDrive()).toBeFalsy();
   });
 
-  xit('things that do not work', ()=>{
-    // a manual mock, not a spy
-    expect(mockCar.isRunning()).toHaveBeenCalled();
-    // not defined by our mock
-    expect(mockCar.start()).toBeUndefined();
+
+  xit('cannot check on method calls', ()=>{
+    driver.canDrive();
+    // we used a real object, not a spy
+    expect(mockCar.isRunning).toHaveBeenCalled();
   })
 });
 
