@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
-import { ACMode, AirCondition } from '../d04.manual_mocking/aircondition';
-import { CarService } from '../d04.manual_mocking/car.service';
-import { DriverService } from '../d04.manual_mocking/driver.service';
+import { ACMode, AirCondition } from '../d05.manual_mocking/aircondition';
+import { CarService } from '../d05.manual_mocking/car.service';
+import { DriverService } from '../d05.manual_mocking/driver.service';
 
 describe('Driver with partial mocking', () => {
   let driver: DriverService;
