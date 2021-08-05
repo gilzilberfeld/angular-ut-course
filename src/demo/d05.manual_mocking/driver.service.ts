@@ -3,30 +3,48 @@ import { ACMode, AirCondition } from './aircondition';
 import { CarService } from './car.service';
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root'
 })
 export class DriverService {
 
-  car : CarService;
+	car: CarService;
+	isCarBroken: boolean = false;
 
-  constructor(car : CarService) { 
-    this.car = car;
-  }
+	constructor(car: CarService) {
+		this.car = car;
+	}
 
-  canDrive() : boolean{
+	canDrive(): boolean {
 		if (!this.hasKeys())
 			return false;
 		return !this.car.isRunning();
 	}
 
-	hasKeys() : boolean{
+	hasKeys(): boolean {
 		return true;
 	}
-	
+
 	drive() {
-		this.car.setAC(new AirCondition(ACMode.On) );
+		this.car.setAC(new AirCondition(ACMode.On));
 		this.car.start();
 	}
+
+	checkTemp() {
+		this.car.temperature.subscribe(
+			temp => {
+				if (temp > 50)
+					this.isCarBroken = true;
+				else
+					this.isCarBroken = false;
+			}
+		);
+	}
+
+	shouldGoToGarage(): boolean {
+
+		return this.isCarBroken;
+	}
+
 }
 
 // 
