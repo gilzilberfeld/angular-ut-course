@@ -22,10 +22,3 @@ export class WeatherForcastComponent {
   }
 }
 
-// todo: 
-// add: things for running tests, not mocking
-//    before each async  + then.
-//    ngOnInit thing that fails
-//    async / await
-//    promises
-//    checking the DOM + detectchanges

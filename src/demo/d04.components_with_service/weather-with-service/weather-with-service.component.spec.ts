@@ -30,7 +30,7 @@ describe('WeatherWithServiceComponent', () => {
     expect(component.isSunny).toBeTruthy();
   });
 
-  it('should be sunny after an a promise', () => {
+  it('should be sunny after a promise', () => {
     component.getIsItSunnyAsync()
       .then(() => {
         expect(component.isSunny).toBeTruthy();

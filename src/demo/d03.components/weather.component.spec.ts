@@ -31,13 +31,15 @@ describe('WeatherComponent', () => {
   it('value should be rainy after click', ()=>{
     component.change();
     expect(component.message).toContain("Rainy");
-    expect(htmlElement.querySelector('span').textContent).toContain("Sunny");
+    var htmlMessage = htmlElement.querySelector('span').textContent;
+    expect(htmlMessage).toContain("Sunny");
   });
 
-  it('message span should be rainy after detectChanges', ()=>{
+  it('html message should be rainy after detectChanges', ()=>{
     component.change();
     fixture.detectChanges();
-    expect(htmlElement.querySelector('span').textContent).toContain("Rainy");
+    var htmlMessage = htmlElement.querySelector('span').textContent;
+    expect(htmlMessage).toContain("Rainy");
   });
 
 });

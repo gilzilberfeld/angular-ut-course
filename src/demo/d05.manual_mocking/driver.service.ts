@@ -15,13 +15,7 @@ export class DriverService {
 	}
 
 	canDrive(): boolean {
-		if (!this.hasKeys())
-			return false;
 		return !this.car.isRunning();
-	}
-
-	hasKeys(): boolean {
-		return true;
 	}
 
 	drive() {
@@ -41,7 +35,6 @@ export class DriverService {
 	}
 
 	shouldGoToGarage(): boolean {
-
 		return this.isCarBroken;
 	}
 
